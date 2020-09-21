@@ -7,22 +7,6 @@
         margin-bottom: 30px;
     }
 
-    .list-news-category {
-        margin-bottom: 30px;
-
-        .category-item {
-            text-align: center;
-            padding: 10px;
-            background: #0053a5;
-            margin-bottom: 20px;
-
-            a {
-                text-decoration: none;
-                color: $white;
-            }
-        }
-    }
-
     .list-news-items {
         .news-item {
             margin-bottom: 25px;
@@ -38,74 +22,8 @@
     }
 }
 
-/* Slide project hot
-------------------------------------------------------------------------- */
-.project-hot {
-    margin: 0;
-
-    @media only screen and (max-width: 767.98px) {
-        margin: 0;
-    }
-
-    .title-list-news-items {
-        h1 {
-            margin: 30px 0 10px;
-
-            @media only screen and (max-width : 768px) {
-                font-size: 28px;
-                margin: 15px 0 15px;
-            }
-        }
-
-        .block-underline {
-            margin-bottom: 30px;
-        }
-    }
-
-    .list-news-items {
-        .bx-wrapper {
-            border: none;
-            margin-bottom: 0;
-
-            @media only screen and (min-width: 979.98px) {
-                max-width: 1170px !important;
-            }
-
-            .bx-viewport {
-                height: 100% !important;
-
-                .news-item {
-                    @media only screen and (min-width: 768px) {
-                        width: initial !important;
-                    }
-    
-                    .news-item-wrapper {
-                        width: 282px !important;
-    
-                        @media only screen and (max-width: 767.98px) {
-                            width: 100% !important;
-                        }
-    
-                        @media (min-width: 768px) and (max-width: 979.98px) {
-                            width: 220px !important;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
 /* Post detail
 ------------------------------------------------------------------------- */
-.page-detail {
-    margin-top: 40px;
-
-    @media only screen and (max-width: 768px) {
-        margin-top: 20px;
-    }
-}
-
 .news {
     h1 {
         font-size: 32px;
@@ -211,6 +129,17 @@
     margin: 10px 0 20px;
 
     .rating-container {
+        .rating {
+            .star-empty, .star-full  {
+                font-family: 'Font Awesome\ 5 Free';
+                font-size: 22px;
+
+                &:before {
+                    content: "\F005";
+                }
+            }
+        }
+
         a#rating {
             display: inline-block;
             font-size: 20px;
@@ -245,6 +174,19 @@
 }
 
 #form-rating-container {
+    .rating {
+        .rating-well {
+            .star, .star-full {
+                font-family: 'Font Awesome\ 5 Free';
+                font-size: 22px;
+
+                &:before {
+                    content: "\F005";
+                }
+            }
+        }
+    }
+    
     .rating-message {
         color: $primaryColor;
         margin: 0;

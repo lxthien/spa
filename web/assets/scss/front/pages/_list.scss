@@ -1,0 +1,20 @@
+
+.category-list-items {
+    padding-top: 50px;
+    
+    .list-news-category {
+        margin-bottom: 30px;
+
+        .category-item {
+            text-align: center;
+            padding: 10px;
+            background: #0053a5;
+            margin-bottom: 20px;
+
+            a {
+                text-decoration: none;
+                color: $white;
+            }
+        }
+    }
+}

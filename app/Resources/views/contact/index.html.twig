@@ -1,5 +1,10 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheets %}
+    <link href="{{ asset('build/css/contact.css') }}" rel="preload stylesheet" as="style" onload="this.rel='stylesheet'" >
+    <noscript><link rel="stylesheet" href="{{ asset('build/css/contact.css') }}" ></noscript>
+{% endblock %}
+
 {% block title %}{{ post.getPageTitle() is not null ? post.getPageTitle() : post.getTitle() }}{% endblock %}
 {% block description %}{{ post.getPageDescription() is not null ? post.getPageDescription() : post.getDescription() }}{% endblock %}
 {% block keyword %}{{ post.getPageKeyword() }}{% endblock %}
@@ -30,11 +35,11 @@
                             <span><strong>0974.776.305 A Tuấn</strong></span>
                         </li>
                         <li>
-                            <i class="fa fa-envelope-o"></i>
+                            <i class="fas fa-envelope"></i>
                             <span><strong>xaydungkimanh@gmail.com</strong></span>
                         </li>
                         <li>
-                            <i class="fa fa-internet-explorer"></i>
+                            <i class="fab fa-internet-explorer"></i>
                             <span><strong>www.xaydungkimanh.com</strong></span>
                         </li>
                     </ul>

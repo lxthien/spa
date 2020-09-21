@@ -69,6 +69,8 @@ twig:
     form_themes:
         - 'form/layout.html.twig'
         - 'form/fields.html.twig'
+    paths:
+        'web/build': 'web'
 
 # Doctrine Configuration (used to access databases and manipulate their information)
 doctrine:
@@ -190,6 +192,14 @@ liip_imagine:
             quality: 75
             filters:
                 thumbnail: { size: [218, 218], mode: outbound }
+        banner_768_400:
+            quality: 100
+            filters:
+                thumbnail: { size: [768, 400], mode: outbound }
+        banner_1500_500:
+            quality: 100
+            filters:
+                thumbnail: { size: [1500, 500], mode: outbound }
 
 # KnpPaginationBundle
 knp_paginator:
