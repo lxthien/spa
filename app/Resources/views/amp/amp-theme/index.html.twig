@@ -29,6 +29,9 @@
             {% include '@amp_theme/css/amp-custom.html.twig' %}</style>
         <script async src="https://cdn.ampproject.org/v0.js"></script>
         <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+        <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+        <script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
+        <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
     </head>
     <body>
         <amp-analytics type="gtag" data-credentials="include">
@@ -43,9 +46,48 @@
             }
             </script>
         </amp-analytics>
+        <amp-animation id="showAnim" layout="nodisplay">
+            <script type="application/json">
+                {
+                    "duration": "200ms",
+                    "fill": "both",
+                    "iterations": "1",
+                    "direction": "alternate",
+                    "animations": [
+                        {
+                        "selector": "#scrollToTopButton",
+                        "keyframes": [
+                            { "opacity": "1", "visibility": "visible" }
+                        ]
+                        }
+                    ]
+                    }
+            </script>
+        </amp-animation>
+        <amp-animation id="hideAnim" layout="nodisplay">
+            <script type="application/json">
+                {
+                    "duration": "200ms",
+                    "fill": "both",
+                    "iterations": "1",
+                    "direction": "alternate",
+                    "animations": [
+                        {
+                        "selector": "#scrollToTopButton",
+                        "keyframes": [
+                            { "opacity": "0", "visibility": "hidden" }
+                        ]
+                        }
+                    ]
+                }
+            </script>
+        </amp-animation>
+
         <div class="wrapper-container">
             <header role="banner">
-                <a href="{{ path('homepage') }}" class="header-link">
+                <a href="{{ path('homepage') }}" class="header-link" id="top">
+                    <amp-position-observer on="enter:hideAnim.start; exit:showAnim.start" layout="nodisplay">
+                    </amp-position-observer>
                     <amp-img
                         alt="Xây Dựng Kim Anh"
                         src="{{ asset('assets/images/logo.png') }}"
@@ -269,9 +311,9 @@
                     </div>
                 </div>
 
-                <div class="td-scroll-up go-to-top td-scroll-up-visible hidden">
+                <button class="td-scroll-up go-to-top td-scroll-up-visible hidden scrollToTop" id="scrollToTopButton" on="tap:top.scrollTo(duration=200)">
                     <i class="fa fa-chevron-up"></i>
-                </div>
+                </button>
 
                 <a href="tel:+84974776305">
                     <div class="hotline">

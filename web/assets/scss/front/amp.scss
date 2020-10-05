@@ -329,6 +329,7 @@ article {
     #list-comments {
         margin-top: 20px;
         margin-bottom: 20px;
+        overflow: hidden;
     
         &>h4 {
             font-size: 26px;
@@ -479,6 +480,7 @@ footer {
         height: 35px;
         background-color: #fdc502;
         z-index: 100;
+        border: none;
     
         @media only screen and (max-width: 767.98px) {
             bottom: 15px;
@@ -491,8 +493,8 @@ footer {
             font-size: 20px;
             display: block;
             text-align: center;
-            width: 35px;
-            top: 7px;
+            width: 25px;
+            top: -2px;
         }
     }
 
