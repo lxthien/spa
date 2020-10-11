@@ -1,3 +1,19 @@
+$white: #ffffff;
+$gray94: #F9F9F9;
+$black: #000000;
+$mercury: #e2e2e2;
+$red: #FF0000;
+$chambray: #3C5A98;
+$mineShaft: #222222;
+$gallery: #ededed;
+$geyser: #DBE0E8;
+$primaryColor: #223455;
+$killarney: #356649;
+$fadedJade: #3C746B;
+$rajah: #F5C168;
+$selectiveYellow: #FFB600;
+$supernova: #FDC502;
+
 @font-face {
     font-family: "Roboto Condensed Bold";
     src: url("fonts/RobotoCondensed-Bold.ttf");
@@ -551,4 +567,56 @@ footer {
             }
         }
     }
+}
+
+.tags {
+    display: flex;
+    margin: 20px 0 5px;
+    font-size: 12px;
+
+    ul {
+        padding: 0;
+        margin-left: 0;
+        margin-bottom: 10px;
+
+        li {
+            margin-bottom: 0px;
+            list-style-type: none;
+            display: inline-block;
+            
+            span {
+                background-color: $mineShaft;
+                padding: 5px 8px;
+                color: $white;
+                display: block;
+                line-height: 16px;
+                float: left;
+                height: 25px;
+            }
+
+            a {
+                display: block;
+                float: left;
+                border: 1px solid $gallery;
+                margin-left: 4px;
+                line-height: 15px;
+                padding: 5px 8px;
+                height: 25px;
+
+                &:hover {
+                    text-decoration: none;
+                    border: 1px solid $primaryColor;
+                    background: $primaryColor;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+.rating-share-container {
+    border-top: 1px solid $gallery;
+    border-bottom: 1px solid $gallery;
+    padding: 10px 0 0;
+    margin: 10px 0 20px;
 }
