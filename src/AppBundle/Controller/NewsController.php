@@ -443,7 +443,7 @@ class NewsController extends Controller
             $html = str_replace($img_matches[0][$key], $amp_tag, $html);
         }
 
-        return $html;
+        return html_entity_decode($html);
     }
 
     private function lazyloadContent($post) {
@@ -469,7 +469,7 @@ class NewsController extends Controller
             $img->setAttribute('src', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==');
         }
         
-        return $dom->saveHTML();
+        return html_entity_decode($dom->saveHTML());
     }
 
     /**

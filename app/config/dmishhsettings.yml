@@ -102,3 +102,7 @@ dmishh_settings:
             type: Symfony\Component\Form\Extension\Core\Type\TextType
             options:
                 required: false
+        linkToInstagram:
+            type: Symfony\Component\Form\Extension\Core\Type\TextType
+            options:
+                required: false

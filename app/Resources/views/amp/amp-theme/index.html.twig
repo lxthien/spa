@@ -1,5 +1,5 @@
 <!doctype html>
-<html ⚡ lang="en">
+<html ⚡ lang="{{ app.request.locale }}">
     <head>
         <meta charset="utf-8">
         <title>{{ post.getPageTitle() is not null ? post.getPageTitle() : post.getTitle() }}</title>
