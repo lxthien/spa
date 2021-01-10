@@ -50,7 +50,7 @@
         font-size: 21px;
         font-weight: 700;
         color: $primaryColor;
-        background: url(../../../images/icon-phone.svg) no-repeat 17px center;
+        background: url(../../../images/icon-phone.png) no-repeat 17px center;
         background-size: 25px;
         position: relative;
         border: 1px solid $supernova;
@@ -69,7 +69,7 @@
             top: 8px;
             left: 16px;
             position: absolute;
-            background: url(../../../images/icon-phone.svg) no-repeat 0px center;
+            background: url(../../../images/icon-phone.png) no-repeat 0px center;
             -webkit-animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
             animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
             -webkit-transform-origin: 50% 50%;
