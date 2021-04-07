@@ -33,6 +33,7 @@
         <script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
         <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
         <script async custom-element="amp-addthis" src="https://cdn.ampproject.org/v0/amp-addthis-0.1.js"></script>
+        <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
     </head>
     <body>
         <amp-analytics type="gtag" data-credentials="include">
@@ -125,7 +126,7 @@
                     {{ include('amp/amp-theme/share.html.twig') }}
                 </div>
 
-                {# List comments #}
+                {# List related #}
                 {{ include('amp/amp-theme/related.html.twig') }}
 
                 {# List comments #}
@@ -296,6 +297,11 @@
                         <div class="col-12 col-sm-6 col-md-3 col-lg-3">
                             <h3 class="text-uppercase">Từ khóa</h3>
                             {{ get_setting('topKeyword')|raw }}
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                            <div class="ads-footer text-center">
+                                {{ get_setting('googleAds1')|raw }}
+                            </div>
                         </div>
                     </div>
                     <div class="row footer-middle">
