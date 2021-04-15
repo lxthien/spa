@@ -131,6 +131,13 @@ class News
     private $pageKeyword = null;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="contactHotline", type="text", nullable=true)
+     */
+    private $contactHotline = null;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="viewCounts", type="integer")
@@ -473,6 +480,18 @@ class News
     public function getPageKeyword()
     {
         return $this->pageKeyword;
+    }
+
+    public function setContactHotline($contactHotline)
+    {
+        $this->contactHotline = $contactHotline;
+
+        return $this;
+    }
+
+    public function getContactHotline()
+    {
+        return $this->contactHotline;
     }
 
     public function setViewCounts($viewCounts)

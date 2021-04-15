@@ -76,6 +76,11 @@ class NewsType extends AbstractType
                 'required' => false,
                 'label' => 'label.pageKeyword',
             ])
+            ->add('contactHotline', TextareaType::class, [
+                'required' => false,
+                'attr' => ['rows' => '5'],
+                'label' => 'Hotline',
+            ])
         ;
     }
 
