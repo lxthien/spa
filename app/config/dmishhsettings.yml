@@ -54,6 +54,14 @@ dmishh_settings:
             type: Symfony\Component\Form\Extension\Core\Type\TextType
             options:
                 required: false
+        addressCompany:
+            type: Symfony\Component\Form\Extension\Core\Type\TextType
+            options:
+                required: false
+        websiteCompany:
+            type: Symfony\Component\Form\Extension\Core\Type\TextType
+            options:
+                required: false
         marqueeHomepage:
             type: Symfony\Component\Form\Extension\Core\Type\TextareaType
             options:

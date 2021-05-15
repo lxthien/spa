@@ -3,6 +3,7 @@
 require('bxslider/dist/jquery.bxslider');
 require('@fancyapps/fancybox');
 require('../../../libs/starrating/js/rating.js');
+require('../../../libs/lightslider/js/lightslider.js');
 
 function initSearchBox() {
     var $formSearch = $('#form-search');
@@ -52,73 +53,18 @@ function initProjectHotSlider() {
     });
 }
 
-function initNewsSlider() {
-    $('.post-sidebar-bxslider').bxSlider({
-        mode: 'vertical',
-        auto: true,
-        speed: 300,
-        autoControls: false,
-        stopAutoOnClick: true,
-        pager: false,
-        controls: false,
-        minSlides: 5,
-        maxSlides: 5,
-        moveSlides: 1,
-        slideWidth: 375,
-        touchEnabled: false,
-        autoHover: true
-    });
-
-    $('.post-sidebar-bxslider-recent').bxSlider({
-        mode: 'vertical',
-        auto: true,
-        speed: 500,
-        autoControls: false,
-        stopAutoOnClick: true,
-        pager: false,
-        controls: false,
-        minSlides: 10,
-        maxSlides: 10,
-        moveSlides: 1,
-        slideWidth: 375,
-        touchEnabled: false,
-        autoHover: true
-    });
-}
-
 function initFixedMenu() {
     $(window).scroll(function() {
         var $nav = $("#nav");
         var $scrollUp = $('.td-scroll-up');
         var scroll = $(window).scrollTop();
     
-        if (scroll > 160) {
+        if (scroll > 85) {
             $nav.addClass("navbar-fixed-top");
             $scrollUp.removeClass("hidden");
         } else {
             $nav.removeClass("navbar-fixed-top");
             $scrollUp.addClass("hidden");
-        }
-    });
-}
-
-function initFixedSidebar() {
-    $(window).scroll(function() {
-        var $sidebar = $("#sidebar .sidebar"),
-            $pageDetail = $('.page-detail'),
-            scrollTop = $(this).scrollTop(),
-            pageDetailHeight =  $pageDetail.outerHeight(),
-            sidebarHeight = $sidebar.height(),
-            positionFixedMax = pageDetailHeight - sidebarHeight,
-            positionFixed = scrollTop < 65 ? 65 : positionFixedMax > scrollTop ? 65 : positionFixedMax - scrollTop + 65 ;
-        
-        if (scrollTop > 160) {
-            $sidebar.css({
-                'top': positionFixed,
-                'position': 'fixed'
-            });
-        } else {
-            $sidebar.removeAttr("style");
         }
     });
 }
@@ -194,94 +140,71 @@ function initFancybox() {
     });
 }
 
-function initTypewriterEffect() {
-    var i = 0,
-        a = 0,
-        isBackspacing = false,
-        isParagraph = false;
+function initFlickity() {
+    $('#image-gallery').lightSlider({
+        gallery: true,
+        item: 1,
+        thumbItem: 4,
+        slideMargin: 0,
+        speed: 500,
+        auto: true,
+        loop: true,
+        onSliderLoad: function() {
+            $('#image-gallery').removeClass('cS-hidden');
+        }  
+    });
 
-    var textArray = [
-        "CÔNG TY TNHH TƯ VẤN THIẾT KẾ XÂY DỰNG KIM ANH|50I TRẦN THỊ BẢY, KHU PHỐ 3, PHƯỜNG HIỆP THÀNH, QUẬN 12, TP HCM"
-    ];
+    $('#image-gallery-2').lightSlider({
+        gallery: true,
+        item: 1,
+        thumbItem: 4,
+        slideMargin: 0,
+        speed: 500,
+        auto: false,
+        loop: true,
+        onSliderLoad: function() {
+            $('#image-gallery-2 iframe').remove();
+            $('#image-gallery-2 li').removeClass('hasIframe');
+        }  
+    });
 
-    // Speed (in milliseconds) of typing.
-    var speedForward = 80, //Typing Speed
-        speedWait = 1500, // Wait between typing and backspacing
-        speedBetweenLines = 1500, //Wait between first and second lines
-        speedBackspace = 25; //Backspace Speed
+    $('#image-gallery-2 li').on('click', function () {
+        $(this).addClass('hasIframe').append('<iframe width="420" height="315" src="' + $(this).attr('data-iframe') + '" frameborder="0" allowfullscreen></iframe>')
+    });
 
-    //Run the loop
-    typeWriter("output", textArray);
-
-    function typeWriter(id, ar) {
-        var element = $("#" + id),
-            aString = ar[a],
-            eHeader = element.children("p#header-company"), //Header element
-            eParagraph = element.children("p#header-address"); //Subheader element
-
-        // Determine if animation should be typing or backspacing
-        if (!isBackspacing) {
-
-            // If full string hasn't yet been typed out, continue typing
-            if (i < aString.length) {
-                // If character about to be typed is a pipe, switch to second line and continue.
-                if (aString.charAt(i) == "|") {
-                    isParagraph = true;
-                    eHeader.removeClass("cursor");
-                    eParagraph.addClass("cursor");
-                    i++;
-                    setTimeout(function () { typeWriter(id, ar); }, speedBetweenLines);
-                    // If character isn't a pipe, continue typing.
-                } else {
-                    // Type header or subheader depending on whether pipe has been detected
-                    if (!isParagraph) {
-                        eHeader.text(eHeader.text() + aString.charAt(i));
-                    } else {
-                        eParagraph.text(eParagraph.text() + aString.charAt(i));
-                    }
-                    i++;
-                    setTimeout(function () { typeWriter(id, ar); }, speedForward);
-                }
-                // If full string has been typed, switch to backspace mode.
-            } else if (i == aString.length) {
-
-                isBackspacing = true;
-                setTimeout(function () { typeWriter(id, ar); }, speedWait);
+    $('#image-gallery-3').lightSlider({
+        item: 3,
+        loop: true,
+        slideMove: 1,
+        easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+        speed: 600,
+        responsive : [
+            {
+                breakpoint:800,
+                settings: {
+                    item: 3,
+                    slideMove: 1,
+                    slideMargin: 6,
+                  }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    item: 2,
+                    slideMove: 1
+                  }
             }
-            // If backspacing is enabled
-        } else {
-            // If either the header or the paragraph still has text, continue backspacing
-            if (eHeader.text().length > 0 || eParagraph.text().length > 0) {
-                // If paragraph still has text, continue erasing, otherwise switch to the header.
-                if (eParagraph.text().length > 0) {
-                    eParagraph.text(eParagraph.text().substring(0, eParagraph.text().length - 1));
-                } else if (eHeader.text().length > 0) {
-                    eParagraph.removeClass("cursor");
-                    eHeader.addClass("cursor");
-                    eHeader.text(eHeader.text().substring(0, eHeader.text().length - 1));
-                }
-                setTimeout(function () { typeWriter(id, ar); }, speedBackspace);
-                // If neither head or paragraph still has text, switch to next quote in array and start typing.
-            } else {
-                isBackspacing = false;
-                i = 0;
-                isParagraph = false;
-                a = (a + 1) % ar.length; //Moves to next position in array, always looping back to 0
-                setTimeout(function () { typeWriter(id, ar); }, 50);
-            }
-        }
-    }
+        ]
+    });
 }
 
 exports.init = function () {
     initSearchBox();
     initProjectHotSlider();
-    initNewsSlider();
     initProtectedContent();
     initGoToTop();
     initFixedMenu();
-    initFixedSidebar();
     initCostConstruction();
     initFancybox();
-    initTypewriterEffect();
+    initFlickity();
 };

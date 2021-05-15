@@ -1,2 +1,14 @@
+@font-face {
+    font-family: "Muli";
+    src: url("fonts/muli/Muli.ttf");
+}
+
+@font-face {
+    font-family: "Arimo";
+    src: url("fonts/arimo/static/Arimo-Regular.ttf");
+}
+
+$muli: 'Muli', sans-serif;
+$arimo: 'Arimo', sans-serif;
 $robotoCondesed: 'Roboto Condensed', sans-serif;
 $arial: Arial, Helvetica, sans-serif;

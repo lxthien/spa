@@ -16,7 +16,8 @@
         li {
             width: 15px;
             height: 15px;
-            background-color: #525252;
+            border-width: 3px;
+            background-color: transparent;
             margin: 0;
 
             @media only screen and (max-width : 768px) {
@@ -27,7 +28,7 @@
             &.active {
                 width: 15px;
                 height: 15px;
-                background-color: $supernova;
+                background-color: $white;
 
                 @media only screen and (max-width : 768px) {
                     width: 10px;
@@ -41,7 +42,7 @@
         .item {
             img {
                 width: 100%;
-                height: 550px;
+                height: 500px;
 
                 @media only screen and (max-width : 768px) {
                     width: 100%;
@@ -138,260 +139,105 @@
     }
 }
 
-.slogin {
-    background-color: #0053a5;
-    padding: 15px 0;
-
-    @media only screen and (max-width: 768px) {
-        padding: 10px 0;
-    }
-
-    .slogin-title {
-        p {
-            margin-bottom: 0;
-            font-size: 19px;
-            font-family: $robotoCondesed;
-            text-transform: uppercase;
-            color: $selectiveYellow;
-            text-shadow: 0.2px 0.2px 0.2px $selectiveYellow;
-
-            @media only screen and (max-width: 768px) {
-                font-size: 16px;
-                text-align: center;
-            }
-        }
-
-        a {
-            font-size: 19px;
-            font-family: $robotoCondesed;
-            font-weight: bold;
-            text-transform: uppercase;
-            color: $selectiveYellow;
-            text-shadow: 0.2px 0.2px 0.2px $selectiveYellow;
-
-            @media only screen and (max-width: 768px) {
-                font-size: 16px;
-                text-align: center;
-                display: block;
-            }
-        }
-    }
-}
-
 .prices-table {
     position: relative;
+    padding-top: 30px;
+}
 
-    &::after {
-        content: "";
-        background: url("../../assets/images/background-price-table.jpg") repeat-y 50%;
-        background-attachment: fixed;
-        opacity: 0.3;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
+.title-section {
+    text-align: center;
+    font-family: $arimo;
+    font-size: 27px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.dark {
+    .title-section {
+        color: $white;
     }
 
-    .marketing {
-        padding-top: 30px;
-    
-        .col-md-3 {
-            margin: 20px 0;
-            
-            /* Small Devices, Tablets */
-            @media only screen and (max-width : 768px) {
-                margin: 5px 0;
+    .block-underline {
+        background: $white;
+    }
+}
+
+.service-homepage {
+    .box-image {
+        border-radius: 50%;
+        overflow: hidden;
+        background: #f7e9dc;
+    }
+
+    .box-text-inner {
+        font-family: $arimo;
+
+        a {
+            color: $black;
+            font-size: 17px;
+            display: block;
+            padding: 10px 0;
+            text-transform: uppercase;
+
+            &:hover {
+                text-decoration: none;
             }
-    
-            .intro {
-                text-align: center;
-    
-                .img {
-                    height: 250px;
-                    width: 250px;
-                    border: 1px solid $primaryColor;
+        }
+
+        p {
+            font-size: 14px;
+            color: $black;
+        }
+    }
+}
+
+.testimonial {
+    .section-bg {
+        background-image: url('http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/22.jpg');
+    }
+
+    #image-gallery-3 {
+        .col-inner {
+            .circle {
+                img {
                     border-radius: 50%;
-                    margin: 0 auto;
-                    padding: 10px;
-
-                    @media (min-width: 768px) and (max-width: 991.98px) {
-                        width: 180px;
-                        height: 180px;
-                        padding: 5px;
-                    }
-    
-                    .mid-img {
-                        width: 228px;
-                        height: 228px;
-                        border: 5px solid $primaryColor;
-                        border-right-color: $supernova;
-                        border-bottom-color: $supernova;
-                        border-radius: 50%;
-                        -webkit-transition: all .5s ease-in-out;
-                        -moz-transition: all .5s ease-in-out;
-                        transition: all .5s ease-in-out;
-                        z-index: 2;
-                        margin: auto;
-                        overflow: hidden;
-
-                        &:hover {
-                            border-left-color: $supernova;
-                            border-top-color: $supernova;
-                        }
-
-                        @media (min-width: 768px) and (max-width: 991.98px) {
-                            width: 168px;
-                            height: 168px;
-                            border: 2px solid $primaryColor;
-                            border-right-color: $supernova;
-                            border-bottom-color: $supernova;
-                        }
-    
-                        .center-img {
-                            width: 218px;
-                            height: 218px;
-
-                            @media (min-width: 768px) and (max-width: 991.98px) {
-                                width: 164px;
-                                height: 164px;
-                            }
-    
-                            img {
-                                margin: auto;
-                                height: 100%;
-                                width: 100%;
-                                transition: 0.6s ease;
-
-                                &:hover {
-                                    transform: scale(1.4);
-                                }
-                            }
-                        }
-                    }
-                }
-    
-                .text {
-                    font-family: $robotoCondesed;
-                    padding: 15px 0;
-                    font-size: 22px;
-                    line-height: 26px;
-
-                    @media only screen and (max-width : 767.98px) {
-                        padding: 15px 25px;
-                    }
-
-                    @media (min-width: 768px) and (max-width: 991.98px) {
-                        font-size: 18px;
-                    }
-    
-                    a {
-                        &:hover {
-                            text-decoration: none;
-                            color: $black;
-                        }
-                    }
                 }
             }
-        }
-    }
-}
 
-.why-choose-us {
-    background-image: url("../../assets/images/background-why-choose-us.jpg");
-    background-position: center center;
-    padding: 40px 0 40px;
+            .icon-box-text {
+                font-family: $arimo;
 
-    @media only screen and (max-width: 768px) {
-        padding: 0 0 20px;
-    }
-
-    .row {
-        .why-choose-us-title {
-            padding: 30px 0;
-            color: #3c3950;
-            margin: 0;
-
-            @media only screen and (max-width: 768px) {
-                font-size: 28px;
-            }
-        }
-
-        .media {
-            .media-left {
-                span {
-                    display: block;
-                    width: 70px;
-                    height: 70px;
+                .testimonial-text p {
+                    color: #f1f1f1;
+                    font-style: italic;
                     text-align: center;
-                    font-size: 3em;
-    
-                    i {
-                        margin-right: 0;
-                        color: $supernova;
-                        vertical-align: top;
-                    }
+                    padding: 10px 20px;
                 }
-            }
-    
-            .media-body {
-                h2 {
-                    font-size: 18px;
-                    font-weight: 600;
-                    margin-bottom: 8px;
-                }
-    
-                .marketing-container {
-                    font-size: 16px;
-                    line-height: 24px;
+
+                .testimonial-meta {
+                    color: #f1f1f1;
+                    font-style: italic;
                 }
             }
         }
     }
 }
 
-.y-kien-khach-hang {
-    position: relative;
-    padding: 40px 0;
-
-    &::after {
-        content: "";
-        background: url("../../assets/images/construction_clients_background.jpg") repeat-y 50%;
-        background-attachment: fixed;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
+.team-homepage {
+    .section-bg {
+        background-image: url('http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/14.jpg');
     }
 
-    h2 {
-        color: #3c3950;
-
-        @media only screen and (max-width : 768px) {
-            font-size: 28px;
-            margin: 15px 0 15px;
+    .col-inner-content {
+        h1 {
+            text-align: right;
+            color: rgb(227, 197, 138);
+            font-family: $arimo;
+            font-size: 30px;
         }
-    }
 
-    .media-wrapper {
-        text-align: center;
-        margin: 20px 0;
-
-        .media {
-            display: inline-block;
-            padding: 0 10px;
-
-            .youtube-video-place {
-                width: 282px;
-                height: 220px;
-
-                iframe {
-                    height: 97%;
-                }
-            }
+        p {
+            font-family: $arimo;
         }
     }
 }

@@ -14,15 +14,14 @@
                         </div>
 
                         <div class="collapse navbar-collapse" id="navbar-collapse">
-                            {# <div class="skew-divider"></div> #}
-                            {{ knp_menu_render('AppBundle:Builder:mainMenu', {
-                                'allow_safe_labels': true,
-                            })|raw }}
-                            <form class="navbar-form navbar-right" action="{{ path('news_search') }}" method="get">
-                                <div class="form-group">
-                                    <input name="q" type="text" class="form-control" placeholder="{{ 'search'|trans }}">
-                                </div>
-                            </form>
+                            <ul class="nav navbar-nav">
+                                <li class="first"><a href="{{ path('homepage') }}" class="home"><i class="fa fa-home"></i></a></li>
+                                <li><a href="{{ path('news_show', {'slug': 'gioi-thieu-hai-beauty' }) }}">Về chúng tôi</a></li>
+                                <li><a href="{{ path('news_category', {'level1': 'dich-vu-lam-dep' }) }}">Dịch vụ làm đẹp</a></li>
+                                <li><a href="{{ path('news_category', {'level1': 'bi-quyet-lam-dep' }) }}">Bí quyết làm đẹp</a></li>
+                                <li><a href="{{ path('news_category', {'level1': 'hinh-anh-video' }) }}">Hình ảnh và video</a></li>
+                                <li class="last"><a href="{{ path('contact') }}">Liên hệ</a></li>
+                            </ul>
                         </div>
                     </nav>
                 </div>

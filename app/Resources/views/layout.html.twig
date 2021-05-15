@@ -71,7 +71,6 @@
             <meta property="og:url" content="{{ url(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) }}" />
         {% endif %}
         <meta property="og:site_name" content="{{ get_setting('siteName') }}" />
-        <meta property="fb:app_id" content="1384538691837107" />
         <!-- Open Graph data -->
 
         <!-- Twitter Card data -->
@@ -98,41 +97,11 @@
 
         {{ get_setting('googleAnalytic')|raw }}
 
-        <!-- Google Tag Manager -->
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-W23BJ8Q');</script>
-        <!-- End Google Tag Manager -->
-
-        <!-- Facebook Pixel Code -->
-        <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '231135361334593');
-        fbq('track', 'PageView');
-        </script>
-        <noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=231135361334593&ev=PageView&noscript=1"
-        /></noscript>
-        <!-- End Facebook Pixel Code -->
-
-        <!-- Custom css -->
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&subset=vietnamese&display=swap" rel="stylesheet">
         <style type="text/css">
             {{ source('@web/css/app.css', ignore_missing = true) }}
         </style>
         {% block stylesheets %}
         {% endblock %}
-
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     </head>
     <body>
         <div class="container-fluid wrapper">
@@ -146,16 +115,8 @@
             {{ include('layout/footer_UI.html.twig') }}
             
             {{ include('layout/contactbar.html.twig') }}
-            {% block contactHotline %}
-                {{ include('layout/hotline.html.twig') }}
-            {% endblock %}
 
             {{ get_setting('facebookMessenger')|raw }}
-
-            <!-- Google Tag Manager (noscript) -->
-            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W23BJ8Q"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-            <!-- End Google Tag Manager (noscript) -->
         </div>
     </body>
 </html>

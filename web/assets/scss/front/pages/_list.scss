@@ -2,18 +2,31 @@
 .category-list-items {
     padding-top: 50px;
     
-    .list-news-category {
-        margin-bottom: 30px;
+    .news-item {
+        .box-image {
+            border-radius: 50%;
+            overflow: hidden;
+            background: #f7e9dc;
+        }
 
-        .category-item {
-            text-align: center;
-            padding: 10px;
-            background: #0053a5;
-            margin-bottom: 20px;
+        .box-text-inner {
+            font-family: $arimo;
 
             a {
-                text-decoration: none;
-                color: $white;
+                color: $black;
+                font-size: 17px;
+                display: block;
+                padding: 10px 0;
+                text-transform: uppercase;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+
+            p {
+                font-size: 14px;
+                color: $black;
             }
         }
     }

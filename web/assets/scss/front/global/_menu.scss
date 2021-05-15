@@ -1,23 +1,11 @@
 #nav {
-    background-color: #0053a5;
-    // background-image: linear-gradient(141deg, #0053a5 0%, #0080ff 50%, #0080ff 75%);
     z-index: 10000;
 
     .nav-container {
         position: relative;
 
-        &::before {
-            content: "";
-            background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAMBAMAAABRpcpkAAAAD1BMVEUAAAAAAAAAAAAAAAAAAABPDueNAAAABXRSTlMGAhQQCyEd++8AAAAUSURBVAjXY1AAQgMgdABCCBAAQQAT6AFRBPHcWgAAAABJRU5ErkJggg==);
-            width: 100%;
-            height: 12px;
-            position: absolute;
-            left: 0;
-            bottom: -12px;
-            z-index: 1;
-        }
-
         .navbar {
+            border-top: 1px solid #ccc;
             background: transparent;
             margin-bottom: 0px;
             border-radius: 0px;
@@ -68,6 +56,10 @@
                 }
     
                 .navbar-nav {
+                    display: table;
+                    margin: 0 auto;
+                    float: unset;
+
                     @media only screen and (max-width: 767.98px) {
                         margin: 0;
                     }
@@ -89,29 +81,16 @@
                                 z-index: 10001;
                             }
                         }
-
-                        &:hover {
-                            &::before {
-                                content: "";
-                                width: 100%;
-                                position: absolute;
-                                bottom: 0px;
-                                left: 0;
-                                height: 3px;
-                                background: $supernova;
-                                z-index: 10001;
-                            }
-                        }
                     }
     
                     a {
-                        padding: 12px 15px;
+                        padding: 10px 15px;
                         font-weight: 500;
-                        font-size: 16px;
+                        font-size: 13px;
                         text-transform: uppercase;
-                        font-family: $robotoCondesed;
-                        color: $selectiveYellow;
-                        text-shadow: 0.2px 0.2px 0.2px $selectiveYellow;
+                        font-family: $muli;
+                        color: $black;
+                        text-shadow: 0.2px 0.2px 0.2px $black;
 
                         &:focus, &:hover {
                             background: transparent;
@@ -242,7 +221,7 @@
 
 #nav {
     &.navbar-fixed-top {
-        opacity: 0.9;
+        background-color: $white;
 
         .nav-container .navbar {
             min-height: auto;

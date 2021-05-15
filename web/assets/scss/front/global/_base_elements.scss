@@ -18,7 +18,7 @@ html {
 }
 
 body {
-    font-family: $arial;
+    font-family: $arimo;
     font-size: 16px;
     color: $black;
     padding: 0;
@@ -34,12 +34,8 @@ body {
 
 .container {
     @media only screen and (min-width: 992px) {
-        width: 1200px;
+        width: 1170px;
     }
-}
-
-.td-wrapper {
-    padding-bottom: 50px;
 }
 
 header, nav, section, article, figure, aside, footer {
@@ -49,7 +45,7 @@ header, nav, section, article, figure, aside, footer {
 h1, h2, h3, h4, h5, h6 {
     margin: 0 0 15px;
     line-height: 1.4;
-    font-family: $arial;
+    font-family: $arimo;
 }
 
 img {
@@ -147,4 +143,62 @@ i {
 .col-lg-12 {
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.section {
+    padding: 30px 0;
+    position: relative;
+    min-height: auto;
+    width: 100%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row;
+    -ms-flex-flow: row;
+    flex-flow: row;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.section-bg {
+    width: 100%;
+}
+
+.section-bg {
+    overflow: hidden;
+}
+
+.fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.bg-fill {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% 50%;
+}
+
+.bg-loaded {
+    opacity: 1;
+}
+
+.block-underline {
+    width: 150px;
+    height: 3px;
+    background: rgb(227, 197, 138);
+    display: block;
+    margin: 0 auto 30px;
+}
+
+.block-underline-sidebar {
+    width: 50%;
+    margin: 0 0 30px;
 }

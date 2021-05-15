@@ -99,24 +99,6 @@ class NewsController extends Controller
                 ->setParameter('enable', 1)
                 ->orderBy('n.createdAt', 'DESC')
                 ->getQuery()->getResult();
-
-            // No items on this page
-            if (count($news) === 0) {
-                $tag = $this->getDoctrine()
-                    ->getRepository(Tag::class)
-                    ->findOneBy(
-                        array('url' => $level1)
-                    );
-
-                $news = $this->getDoctrine()
-                    ->getRepository(News::class)
-                    ->createQueryBuilder('n')
-                    ->innerJoin('n.tags', 't')
-                    ->where('t.id = :tags_id')
-                    ->setParameter('tags_id', $tag->getId())
-                    ->orderBy('n.createdAt', 'DESC')
-                    ->getQuery()->getResult();
-            }
         } else {
             $news = $this->getDoctrine()
                 ->getRepository(News::class)
@@ -561,7 +543,7 @@ class NewsController extends Controller
      * Render list news by category
      * @return News
      */
-    public function listNewsByCategoryAction($categoryId)
+    public function listNewsByCategoryAction($categoryId, $template = NULL, $title = NULL)
     {
         $category = $this->getDoctrine()
             ->getRepository(NewsCategory::class)
@@ -592,9 +574,16 @@ class NewsController extends Controller
             ->getQuery()
             ->getResult();
 
-        return $this->render('news/listByCategory.html.twig', [
-            'posts' => $posts,
-        ]);
+        if (!$template) {
+            return $this->render('news/listByCategory.html.twig', [
+                'posts' => $posts,
+            ]);
+        } else {
+            return $this->render($template, [
+                'posts' => $posts,
+                'title' => $title
+            ]);
+        }
     }
 
     /**
