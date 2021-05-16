@@ -31,19 +31,29 @@
                                             {{ form_widget(settings_form.siteName) }}
                                         </div>
                                         <div class="form-group">
+                                            {{ form_label(settings_form.teamHomepage) }}
+                                            {{ form_errors(settings_form.teamHomepage) }}
+                                            {{ form_widget(settings_form.teamHomepage) }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form_label(settings_form.teamImageHomepage) }}
+                                            {{ form_errors(settings_form.teamImageHomepage) }}
+                                            {{ form_widget(settings_form.teamImageHomepage) }}
+                                        </div>
+                                        <div class="form-group">
                                             {{ form_label(settings_form.marqueeHomepage) }}
                                             {{ form_errors(settings_form.marqueeHomepage) }}
                                             {{ form_widget(settings_form.marqueeHomepage) }}
                                         </div>
                                         <div class="form-group">
-                                            {{ form_label(settings_form.googleAnalytic) }}
-                                            {{ form_errors(settings_form.googleAnalytic) }}
-                                            {{ form_widget(settings_form.googleAnalytic) }}
-                                        </div>
-                                        <div class="form-group">
                                             {{ form_label(settings_form.topKeyword) }}
                                             {{ form_errors(settings_form.topKeyword) }}
                                             {{ form_widget(settings_form.topKeyword) }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form_label(settings_form.googleAnalytic) }}
+                                            {{ form_errors(settings_form.googleAnalytic) }}
+                                            {{ form_widget(settings_form.googleAnalytic) }}
                                         </div>
                                         <div class="form-group">
                                             {{ form_label(settings_form.facebookMessenger) }}
@@ -124,6 +134,11 @@
                                             {{ form_label(settings_form.websiteCompany) }}
                                             {{ form_errors(settings_form.websiteCompany) }}
                                             {{ form_widget(settings_form.websiteCompany) }}
+                                        </div>
+                                        <div class="form-group">
+                                            {{ form_label(settings_form.mapCompany) }}
+                                            {{ form_errors(settings_form.mapCompany) }}
+                                            {{ form_widget(settings_form.mapCompany) }}
                                         </div>
                                     </div>
 

@@ -146,7 +146,7 @@ function initFlickity() {
         item: 1,
         thumbItem: 4,
         slideMargin: 0,
-        speed: 500,
+        speed: 2000,
         auto: true,
         loop: true,
         onSliderLoad: function() {
@@ -163,13 +163,13 @@ function initFlickity() {
         auto: false,
         loop: true,
         onSliderLoad: function() {
-            $('#image-gallery-2 iframe').remove();
-            $('#image-gallery-2 li').removeClass('hasIframe');
+            //$('#image-gallery-2 iframe').remove();
+            //$('#image-gallery-2 li').removeClass('hasIframe');
         }  
     });
 
     $('#image-gallery-2 li').on('click', function () {
-        $(this).addClass('hasIframe').append('<iframe width="420" height="315" src="' + $(this).attr('data-iframe') + '" frameborder="0" allowfullscreen></iframe>')
+        //$(this).addClass('hasIframe').append('<iframe width="420" height="315" src="' + $(this).attr('data-iframe') + '" frameborder="0" allowfullscreen></iframe>')
     });
 
     $('#image-gallery-3').lightSlider({
@@ -180,19 +180,18 @@ function initFlickity() {
         speed: 600,
         responsive : [
             {
-                breakpoint:800,
+                breakpoint: 800,
                 settings: {
-                    item: 3,
-                    slideMove: 1,
-                    slideMargin: 6,
-                  }
+                    item: 2,
+                    slideMove: 1
+                }
             },
             {
                 breakpoint: 480,
                 settings: {
-                    item: 2,
+                    item: 1,
                     slideMove: 1
-                  }
+                }
             }
         ]
     });

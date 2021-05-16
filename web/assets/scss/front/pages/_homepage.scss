@@ -182,23 +182,46 @@
             &:hover {
                 text-decoration: none;
             }
+
+            @media only screen and (max-width : 768px) {
+                font-size: 18px;
+            }
         }
 
         p {
             font-size: 14px;
             color: $black;
+
+            @media only screen and (max-width : 768px) {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.images-video {
+    .slider-wrapper {
+        @media only screen and (max-width : 768px) {
+            margin-bottom: 20px;
         }
     }
 }
 
 .testimonial {
     .section-bg {
-        background-image: url('http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/22.jpg');
+        background-image: url('../../../images/background-2.jpg');
     }
 
     #image-gallery-3 {
-        .col-inner {
+        .testimonial-box {
             .circle {
+                text-align: center;
+                padding: 30px;
+
+                @media only screen and (max-width : 768px) {
+                    padding: 20px;
+                }
+
                 img {
                     border-radius: 50%;
                 }
@@ -212,20 +235,40 @@
                     font-style: italic;
                     text-align: center;
                     padding: 10px 20px;
+                    min-height: 100px;
+                    margin-bottom: 0;
+
+                    @media only screen and (max-width : 768px) {
+                        font-size: 17px;
+                    }
                 }
 
                 .testimonial-meta {
                     color: #f1f1f1;
                     font-style: italic;
+                    text-align: center;
+                    text-transform: uppercase;
+                    font-weight: 600;
                 }
             }
         }
+    }
+
+    .lSSlideOuter .lSPager.lSpg > li a {
+        border: 2px solid #fff;
+        background-color: transparent;
+        width: 12px;
+        height: 12px;
+    }
+
+    .lSSlideOuter .lSPager.lSpg > li.active a {
+        background-color: #fff;
     }
 }
 
 .team-homepage {
     .section-bg {
-        background-image: url('http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/14.jpg');
+        background-image: url('../../../images/background-1.jpg');
     }
 
     .col-inner-content {

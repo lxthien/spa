@@ -1,43 +1,42 @@
 {% if showSlide is defined %}
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
         <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+            {% for row in banners %}
+                <li data-target="#myCarousel" data-slide-to="{{ loop.index - 1 }}" class="{{ loop.first ? 'active' : '' }}"></li>
+            {% endfor %}
         </ol>
         <div class="carousel-inner">
-            <div class="item active">
-                <a href="{{ path('homepage') }}">
-                    <picture>
-                        <source
-                            srcset="{{ asset('assets/images/banner/banner-01.jpg') | imagine_filter('banner_768_400') }}"
-                            media="(max-width: 799px)" />
-                        <source
-                            srcset="{{ asset('assets/images/banner/banner-01.jpg') | imagine_filter('banner_1500_500') }}"
-                            media="(min-width: 800px)" />
-                        <img
-                            src="{{ asset('assets/images/banner/banner-01.jpg') | imagine_filter('banner_1500_500') }}"
-                            alt="Thi công xây dựng phần thô" />
-                    </picture>
-                </a>
-            </div>
-            <div class="item">
-                <a href="{{ path('news_show', {'slug': 'bang-gia-thiet-ke-nha-pho-tai-tphcm'}) }}">
-                    <picture>
-                        <source
-                            data-srcset="{{ asset('assets/images/banner/banner-02.jpg') | imagine_filter('banner_768_400') }}"
-                            media="(max-width: 799px)" />
-                        <source
-                            data-srcset="{{ asset('assets/images/banner/banner-02.jpg') | imagine_filter('banner_1500_500') }}"
-                            media="(min-width: 800px)" />
-                        <img
-                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-src="{{ asset('assets/images/banner/banner-02.jpg') | imagine_filter('banner_1500_500') }}"
-                            alt="Chuyên thiết kế thi công nhà phố, biệt thự"
-                            class="lazyload" />
-                    </picture>
-                </a>
-            </div>
+            {% for row in banners %}
+                <div class="item {{ loop.first ? 'active' : '' }}">
+                    {% if (row.getUrl() != '') %}
+                        <a href="{{ row.getUrl() }}">
+                            <picture>
+                                <source
+                                    srcset="{{ (vich_uploader_asset(row, 'imageFile') ? vich_uploader_asset(row, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('banner_768_400') }}"
+                                    media="(max-width: 799px)" />
+                                <source
+                                    srcset="{{ (vich_uploader_asset(row, 'imageFile') ? vich_uploader_asset(row, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('banner_1500_500') }}"
+                                    media="(min-width: 800px)" />
+                                <img
+                                    src="{{ (vich_uploader_asset(row, 'imageFile') ? vich_uploader_asset(row, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('banner_1500_500') }}"
+                                    alt="{{ row.getName() }}" />
+                            </picture>
+                        </a>
+                    {% else %}
+                        <picture>
+                            <source
+                                srcset="{{ (vich_uploader_asset(row, 'imageFile') ? vich_uploader_asset(row, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('banner_768_400') }}"
+                                media="(max-width: 799px)" />
+                            <source
+                                srcset="{{ (vich_uploader_asset(row, 'imageFile') ? vich_uploader_asset(row, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('banner_1500_500') }}"
+                                media="(min-width: 800px)" />
+                            <img
+                                src="{{ (vich_uploader_asset(row, 'imageFile') ? vich_uploader_asset(row, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('banner_1500_500') }}"
+                                alt="{{ row.getName() }}" />
+                        </picture>
+                    {% endif %}
+                </div>
+            {% endfor %}
         </div>
         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>

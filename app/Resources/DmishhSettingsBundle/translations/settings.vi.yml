@@ -21,6 +21,7 @@ labels:
   hotLine2: Hotline 2
   addressCompany: Địa chỉ công ty
   websiteCompany: Website công ty
+  mapCompany: Bản đồ công ty
   marqueeHomepage: Slogan ở trang chủ
   googleAnalytic: Google analytic
   listPrices: Danh sách bảng giá
@@ -34,3 +35,5 @@ labels:
   linkToYoutube: Youtube
   linkToLinkedin: Linkedin
   linkToInstagram: Instagram
+  teamHomepage: Đội ngũ nhân viên
+  teamImageHomepage: Hình ảnh đội ngũ nhân viên

@@ -10,7 +10,7 @@ footer {
 
     &::after {
         content: "";
-        background-image: url("http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/14.jpg");
+        background-image: url("../../../images/background-1.jpg");
         background-attachment: fixed;
         opacity: 0.9;
         position: absolute;
@@ -30,9 +30,18 @@ footer {
     h3.text-uppercase {
         font-family: $arimo;
         font-size: 23px;
+        font-weight: 600;
 
         @media (max-width: 768px) {
             margin-top: 35px;
+        }
+    }
+
+    .footer-logo {
+        @media only screen and (max-width : 768px) {
+            display: block;
+            text-align: center;
+            padding: 10px 0;
         }
     }
 

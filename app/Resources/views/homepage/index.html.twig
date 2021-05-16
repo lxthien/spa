@@ -62,14 +62,14 @@
             <section class="section">
                 <div class="section-content relative service-homepage container">
                     <div class="row">
-                        <div class="col small-12 large-12">
+                        <div class="col col-12 col-md-12">
                             <div class="col-inner">
                                 <h1 class="title-section">DỊCH VỤ NỔI BẬT</h1>
                                 <span class="text-center block-underline"></span>
 
                                 <div class="row">
                                     {% for priceOnHomepage in blockPricesOnHomepage %}
-                                        <div class="col col-12 col-md-3">
+                                        <div class="col col-12 col-sm-6 col-md-3">
                                             <div class="col-inner">
                                                 <div class="box has-hover has-hover box-text-bottom">
                                                     <div class="box-image">
@@ -110,7 +110,7 @@
                 </div>
             </section>
 
-            <section class="section">
+            <section class="section images-video">
                 <div class="section-content relative container">
                     <div class="row">
                         <div class="col col-12 col-md-12">
@@ -121,8 +121,8 @@
                                 <div class="row align-center">
                                     <div class="col col-md-6 col-12">
                                         <div class="col-inner">
-                                            <div class="slider-wrapper relative">
-                                                <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
+                                            <div class="slider-wrapper">
+                                                <ul id="image-gallery">
                                                     <li data-thumb="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/6.jpg"> 
                                                         <img src="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/6.jpg" />
                                                     </li>
@@ -187,7 +187,11 @@
                                         <div class="col-inner">
                                             <div class="img">
                                                 <div class="img-inner dark">
-                                                    <img width="1020" height="548" src="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/15.png" class="attachment-large size-large" alt="" srcset="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/15.png 1027w, http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/15-744x400.png 744w, http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/15-768x413.png 768w, http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/15-600x322.png 600w" sizes="(max-width: 1020px) 100vw, 1020px">                
+                                                    <img 
+                                                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                                        class="lazyload"
+                                                        alt="Đội ngũ công ty"
+                                                        srcset="{{ get_setting('teamImageHomepage') }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -195,7 +199,7 @@
                                     <div class="col col-md-5 col-12">
                                         <div class="col-inner-content">
                                             <h1><strong>ĐỘI NGŨ BÁC SỸ</strong></h1>
-                                            <p>Viện thẩm mỹ RINA tự hào là nơi hội tụ đầy đủ đội ngũ y bác sỹ đầu ngành trong lĩnh vực thẩm mỹ nội và ngoại khoa mang tầm cỡ Quốc tế, sở hữu nhiều năm kinh nghiệm, tu nghiệp và làm việc tại các nước đi đầu trong lĩnh vực thẩm mỹ như: Hàn Quốc, Tây Ban Nha, Thuỵ Sỹ… Chắt lọc toàn bộ tinh hoa trên thế giới chúng tôi tự tin sẽ là địa chỉ số 1 và duy nhất hội tụ các phương pháp, công nghệ tiên tiến để thực hiện sứ mệnh chăm sóc sức khoẻ và sắc đẹp Á Đông. Hãy để Viện thẩm mỹ RINA đồng hành trên con đường hoàn thiện nhan sắc của bạn!</p>
+                                            <p>{{ get_setting('teamHomepage')|raw }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -215,117 +219,28 @@
                                 <h1 class="title-section text-white">CẢM NHẬN KHÁCH HÀNG</h1>
                                 <span class="text-center block-underline"></span>
 
-                                <div class="slider-wrapper relative">
-                                    <div class="flickity-slider">
-                                        <div class="row">
-                                            <div id="image-gallery-3">
-                                                <div class="col medium-4 small-12 large-4">
-                                                    <div class="col-inner">
-                                                        <div class="icon-box testimonial-box icon-box-center text-center">
-                                                            <div class="icon-box-img testimonial-image circle">
-                                                                <img width="280" height="280" src="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1-280x280.jpg" class="attachment-thumbnail size-thumbnail" alt="" srcset="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1-280x280.jpg 280w, http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1-300x300.jpg 300w, http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1-100x100.jpg 100w, http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1.jpg 387w" sizes="(max-width: 280px) 100vw, 280px">        
-                                                            </div>
-                                                            <div class="icon-box-text p-last-0">
-                                                                <div class="testimonial-text line-height-small italic test_text first-reset last-reset is-italic">
-                                                                    <p>“Với phụ nữ sắc đẹp và sự tự tin là yếu tố tiên quyết cho thành công trong cuộc sống. Sau khi tìm hiểu rất nhiều phương pháp trẻ hoá làn da, Dung quyết định đến với Viện thẩm mỹ Rina để trải nghiệm công nghệ Thermage FLX, công nghệ nâng cơ trẻ hoá làn da đang được ưa chuộng nhất trên toàn thế giới hiện nay.”</p>
-                                                                </div>
-                                                                <div class="testimonial-meta pt-half">
-                                                                    <strong class="testimonial-name test_name">NHƯ Ý</strong>
-                                                                    <span class="testimonial-name-divider"> / </span>
-                                                                    <span class="testimonial-company test_company">DOANH NHÂN</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- .icon-box -->
+                                <div class="slider-wrapper">
+                                    <div id="image-gallery-3">
+                                        {% for row in testimonial %}
+                                            <div class="icon-box testimonial-box">
+                                                <div class="icon-box-img testimonial-image circle">
+                                                    <img
+                                                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                                        alt="{{ row.getName() }}"
+                                                        srcset="{{ (vich_uploader_asset(row, 'imageFile') ? vich_uploader_asset(row, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('news_385_394') }}"
+                                                        />
+                                                </div>
+                                                <div class="icon-box-text">
+                                                    <div class="testimonial-text">
+                                                        <p>“{{ row.getComments() }}”</p>
+                                                    </div>
+                                                    <div class="testimonial-meta">
+                                                        {{ row.getName() }}
                                                     </div>
                                                 </div>
-                                                <div class="col medium-4 small-12 large-4">
-                                                    <div class="col-inner">
-                                                        <div class="icon-box testimonial-box icon-box-center text-center">
-                                                            <div class="icon-box-img testimonial-image circle">
-                                                                <img width="280" height="280" src="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1-280x280.jpg" class="attachment-thumbnail size-thumbnail" alt="" srcset="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1-280x280.jpg 280w, http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1-300x300.jpg 300w, http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1-100x100.jpg 100w, http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1.jpg 387w" sizes="(max-width: 280px) 100vw, 280px">        
-                                                            </div>
-                                                            <div class="icon-box-text p-last-0">
-                                                                <div class="star-rating"><span style="width:100%"><strong class="rating"></strong></span></div>
-                                                                <div class="testimonial-text line-height-small italic test_text first-reset last-reset is-italic">
-                                                                    <p>“Với phụ nữ sắc đẹp và sự tự tin là yếu tố tiên quyết cho thành công trong cuộc sống. Sau khi tìm hiểu rất nhiều phương pháp trẻ hoá làn da, Dung quyết định đến với Viện thẩm mỹ Rina để trải nghiệm công nghệ Thermage FLX, công nghệ nâng cơ trẻ hoá làn da đang được ưa chuộng nhất trên toàn thế giới hiện nay.”</p>
-                                                                </div>
-                                                                <div class="testimonial-meta pt-half">
-                                                                    <strong class="testimonial-name test_name">NHƯ Ý</strong>
-                                                                    <span class="testimonial-name-divider"> / </span>
-                                                                    <span class="testimonial-company test_company">DOANH NHÂN</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- .icon-box -->
-                                                    </div>
-                                                </div>
-                                                <div class="col medium-4 small-12 large-4">
-                                                    <div class="col-inner">
-                                                        <div class="icon-box testimonial-box icon-box-center text-center">
-                                                            <div class="icon-box-img testimonial-image circle">
-                                                                <img width="280" height="280" src="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1-280x280.jpg" class="attachment-thumbnail size-thumbnail" alt="" srcset="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1-280x280.jpg 280w, http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1-300x300.jpg 300w, http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1-100x100.jpg 100w, http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1.jpg 387w" sizes="(max-width: 280px) 100vw, 280px">        
-                                                            </div>
-                                                            <div class="icon-box-text p-last-0">
-                                                                <div class="star-rating"><span style="width:100%"><strong class="rating"></strong></span></div>
-                                                                <div class="testimonial-text line-height-small italic test_text first-reset last-reset is-italic">
-                                                                    <p>“Với phụ nữ sắc đẹp và sự tự tin là yếu tố tiên quyết cho thành công trong cuộc sống. Sau khi tìm hiểu rất nhiều phương pháp trẻ hoá làn da, Dung quyết định đến với Viện thẩm mỹ Rina để trải nghiệm công nghệ Thermage FLX, công nghệ nâng cơ trẻ hoá làn da đang được ưa chuộng nhất trên toàn thế giới hiện nay.”</p>
-                                                                </div>
-                                                                <div class="testimonial-meta pt-half">
-                                                                    <strong class="testimonial-name test_name">NHƯ Ý</strong>
-                                                                    <span class="testimonial-name-divider"> / </span>
-                                                                    <span class="testimonial-company test_company">DOANH NHÂN</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- .icon-box -->
-                                                    </div>
-                                                </div>
-                                                <div class="col medium-4 small-12 large-4">
-                                                    <div class="col-inner">
-                                                        <div class="icon-box testimonial-box icon-box-center text-center">
-                                                            <div class="icon-box-img testimonial-image circle">
-                                                                <img width="280" height="280" src="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1-280x280.jpg" class="attachment-thumbnail size-thumbnail" alt="" srcset="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1-280x280.jpg 280w, http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1-300x300.jpg 300w, http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1-100x100.jpg 100w, http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1.jpg 387w" sizes="(max-width: 280px) 100vw, 280px">        
-                                                            </div>
-                                                            <div class="icon-box-text p-last-0">
-                                                                <div class="star-rating"><span style="width:100%"><strong class="rating"></strong></span></div>
-                                                                <div class="testimonial-text line-height-small italic test_text first-reset last-reset is-italic">
-                                                                    <p>“Với phụ nữ sắc đẹp và sự tự tin là yếu tố tiên quyết cho thành công trong cuộc sống. Sau khi tìm hiểu rất nhiều phương pháp trẻ hoá làn da, Dung quyết định đến với Viện thẩm mỹ Rina để trải nghiệm công nghệ Thermage FLX, công nghệ nâng cơ trẻ hoá làn da đang được ưa chuộng nhất trên toàn thế giới hiện nay.”</p>
-                                                                </div>
-                                                                <div class="testimonial-meta pt-half">
-                                                                    <strong class="testimonial-name test_name">NHƯ Ý</strong>
-                                                                    <span class="testimonial-name-divider"> / </span>
-                                                                    <span class="testimonial-company test_company">DOANH NHÂN</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- .icon-box -->
-                                                    </div>
-                                                </div>
-                                                <div class="col medium-4 small-12 large-4">
-                                                    <div class="col-inner">
-                                                        <div class="icon-box testimonial-box icon-box-center text-center">
-                                                            <div class="icon-box-img testimonial-image circle">
-                                                                <img width="280" height="280" src="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1-280x280.jpg" class="attachment-thumbnail size-thumbnail" alt="" srcset="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1-280x280.jpg 280w, http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1-300x300.jpg 300w, http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1-100x100.jpg 100w, http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/1572327924_customer-1.jpg 387w" sizes="(max-width: 280px) 100vw, 280px">        
-                                                            </div>
-                                                            <div class="icon-box-text p-last-0">
-                                                                <div class="star-rating"><span style="width:100%"><strong class="rating"></strong></span></div>
-                                                                <div class="testimonial-text line-height-small italic test_text first-reset last-reset is-italic">
-                                                                    <p>“Với phụ nữ sắc đẹp và sự tự tin là yếu tố tiên quyết cho thành công trong cuộc sống. Sau khi tìm hiểu rất nhiều phương pháp trẻ hoá làn da, Dung quyết định đến với Viện thẩm mỹ Rina để trải nghiệm công nghệ Thermage FLX, công nghệ nâng cơ trẻ hoá làn da đang được ưa chuộng nhất trên toàn thế giới hiện nay.”</p>
-                                                                </div>
-                                                                <div class="testimonial-meta pt-half">
-                                                                    <strong class="testimonial-name test_name">NHƯ Ý</strong>
-                                                                    <span class="testimonial-name-divider"> / </span>
-                                                                    <span class="testimonial-company test_company">DOANH NHÂN</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- .icon-box -->
-                                                    </div>
-                                                </div>
-                                            <div>
-                                        </div>
-                                    </div>
+                                            </div>
+                                        {% endfor %}
+                                    <div>
                                 </div>
                             </div>
                         </div>

@@ -20,6 +20,7 @@ parameters:
     app.path.product_images: "/uploads/images/products"
     app.path.news_images: "/uploads/images/news"
     app.path.banner_images: "/uploads/images/banner"
+    app.path.testimonial_images: "/uploads/images/testimonial"
 
 # Basic configuration for the Symfony framework features
 framework:
@@ -116,6 +117,12 @@ vich_uploader:
         banner_images:
             uri_prefix:         '%app.path.banner_images%'
             upload_destination: '%kernel.root_dir%/../web/uploads/images/banner'
+            namer: vich_uploader.namer_origname
+            delete_on_remove: true
+            delete_on_update: true
+        testimonial_images:
+            uri_prefix:         '%app.path.testimonial_images%'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/testimonial'
             namer: vich_uploader.namer_origname
             delete_on_remove: true
             delete_on_update: true
