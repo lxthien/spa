@@ -4,9 +4,12 @@
     
     .news-item {
         .box-image {
-            border-radius: 50%;
             overflow: hidden;
-            background: #f7e9dc;
+            padding: 25px;
+
+            img {
+                border-radius: 50%;
+            }
         }
 
         .box-text-inner {
@@ -25,7 +28,7 @@
                 }
 
                 @media only screen and (max-width : 768px) {
-                    font-size: 18px;
+                    font-size: 19px;
                     min-height: auto;
                 }
             }
@@ -36,7 +39,7 @@
                 min-height: 70px;
 
                 @media only screen and (max-width : 768px) {
-                    font-size: 16px;
+                    font-size: 17px;
                 }
             }
         }
