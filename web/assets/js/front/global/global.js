@@ -4,6 +4,7 @@ require('bxslider/dist/jquery.bxslider');
 require('@fancyapps/fancybox');
 require('../../../libs/starrating/js/rating.js');
 require('../../../libs/lightslider/js/lightslider.js');
+require('jquery-validation');
 
 function initSearchBox() {
     var $formSearch = $('#form-search');

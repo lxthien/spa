@@ -12,8 +12,6 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
-use EWZ\Bundle\RecaptchaBundle\Form\Type\EWZRecaptchaType;
-
 use AppBundle\Entity\Contact;
 use AppBundle\Entity\News;
 
@@ -34,7 +32,6 @@ class ContactController extends Controller
                 'label' => 'label.content',
                 'attr' => array('rows' => '7')
             ))
-            ->add('recaptcha', EWZRecaptchaType::class)
             ->add('send', SubmitType::class, array('label' => 'label.send', 'attr' => array('class' => 'btn btn-primary')))
             ->getForm();
 
