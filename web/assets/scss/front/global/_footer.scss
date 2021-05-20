@@ -1,7 +1,6 @@
 footer {
     padding-top: 40px;
     position: relative;
-    border-top: 3px solid $supernova;
     font-family: $arimo;
 
     @media only screen and (max-width: 768px) {
@@ -59,40 +58,52 @@ footer {
                 list-style: none;
 
                 i {
-                    color: $black;
+                    color: #e4ab68;
                 }
             }
         }
 
-        .event-footer {
-            margin-top: 50px;
+        .contact-form {
+            .form-group {
+                margin-bottom: 0;
     
-            .event-footer-item {
-                h6 {
-                    margin-bottom: 10px;
-                    font-size: 15px;
-                    font-style: italic;
+                label {
+                    color: $black;
+                    font-size: 14px;
+                    margin-bottom: 0;
     
-                    a {
-                        color: $black;
-    
-                        &:hover {
-                            color: $black;
-                        }
+                    &.error {
+                        display: none !important;
                     }
                 }
+    
+                input {
+                    padding: 0 0 0 5px;
+                    height: 30px;
+                    margin-bottom: 7px;
+                    border-radius: 0;
+                    border: 1px solid #ececec;
+                    box-shadow: none;
+    
+                    &.error {
+                        border: 1px solid red;
+                    }
+                }
+    
+                button {
+                    background: #e4ab68;
+                    border-radius: 0;
+                    border: none;
+                    padding: 8px 20px;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    margin-top: 10px;
+                }
             }
         }
 
-        .fb-page,
-        .fb-page span,
-        .fb-page span iframe[style] {
-            max-width: 100% !important;
-        }
-
-        .ads-footer {
-            margin-top: 20px;
-            text-align: center;
+        #contact-form-footer {
+            display: none;
         }
     }
 
@@ -135,23 +146,6 @@ footer {
                     position: relative;
                     color: $black;
                 }
-            }
-        }
-    }
-
-    .keyword {
-        padding-left: 0;
-        
-        li {
-            list-style-type: none;
-            display: inline-block;
-            border: 1px solid $supernova;
-            margin: 0 0 8px 0;
-            padding: 0 8px;
-
-            a {
-                color: $black;
-                font-size: 15px;
             }
         }
     }

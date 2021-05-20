@@ -5,6 +5,14 @@
     <span class="text-center block-underline block-underline-sidebar"></span>
 
     <div class="sidebar-wrapper">
+        <a href="{{ path('news_show', {'slug': 'bang-gia-dich-vu' }) }}" class="prices">
+            <img
+                alt="Bảng giá dịch vụ làm đẹp tại Hải Beauty"
+                class="img-responsive lazyload"
+                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                data-src="{{ asset('assets/images/bang-gia-dich-vu-spa.jpg') }}" />
+            <span>Bảng giá dịch vụ làm đẹp tại Hải Beauty</span>
+        </a>
         {% for row in posts %}
             <div class="item">
                 <a href="{{ path('news_show', {'slug': row.getUrl() }) }}" class="list-group-item td-list-group-item" title="{{ row.getTitle() }}">

@@ -28,6 +28,10 @@ class BannerType extends AbstractType
                 'required' => false,
                 'label' => 'label.url',
             ])
+            ->add('youtubeID', TextType::class, [
+                'required' => false,
+                'label' => 'Youtube ID',
+            ])
             ->add('imageFile', VichFileType::class, [
                 'allow_delete' => true,
             ])

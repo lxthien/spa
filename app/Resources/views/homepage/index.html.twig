@@ -10,11 +10,11 @@
     {
         "@context": "http://schema.org",
         "@type": "Organization",
-        "url": "https://xaydungkimanh.com/",
-        "logo": "https://xaydungkimanh.com/assets/images/logo.png",
+        "url": "http://haibeauty.vn/",
+        "logo": "http://haibeauty.vn/assets/images/logo.png",
         "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+84 974776305",
+            "telephone": "+84 0968409978",
             "contactType": "customer service"
         }
     }
@@ -26,10 +26,10 @@
     {
         "@context": "http://schema.org",
         "@type": "WebSite",
-        "url": "https://xaydungkimanh.com/",
+        "url": "http://haibeauty.vn/",
         "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://xaydungkimanh.com/search?q={search_term_string}",
+            "target": "http://haibeauty.vn/search?q={search_term_string}",
             "query-input": "required name=search_term_string"
         }
     }
@@ -41,17 +41,8 @@
     {
         "@context": "http://schema.org",
         "@type": "Person",
-        "name": "Xây Dựng Kim Anh",
-        "url": "https://xaydungkimanh.com/",
-        "sameAs": [
-            "https://www.facebook.com/xaydungkimanh/",
-            "https://twitter.com/xaydungkimanh",
-            "https://www.linkedin.com/in/xaydungkimanh/",
-            "https://www.youtube.com/channel/UCwYmkaoSIRgpZo2Us4FzleQ",
-            "https://www.reddit.com/user/xaydungkimanh",
-            "https://www.behance.net/xaydungkimanh/",
-            "https://gab.com/xaydungkimanh"
-        ]
+        "name": "Hải Beauty",
+        "url": "http://haibeauty.vn/"
     }
     </script>
 {% endblock %}
@@ -89,17 +80,13 @@
                                                                 alt="{{priceOnHomepage.getTitle()}}" />
                                                         </picture>
                                                     </div>
-                                                    <!-- box-image -->
                                                     <div class="text-center">
                                                         <div class="box-text-inner">
                                                             <a href="{{ path('news_show', {'slug': priceOnHomepage.getUrl() }) }}" title="{{ priceOnHomepage.getTitle() }}"><strong>{{ priceOnHomepage.getTitle() }}</strong></a>
                                                             <p>{{ priceOnHomepage.getDescription()|slice(0, 105) }}</p>
                                                         </div>
-                                                        <!-- box-text-inner -->
                                                     </div>
-                                                    <!-- box-text -->
                                                 </div>
-                                                <!-- .box  -->
                                             </div>
                                         </div>
                                     {% endfor %}
@@ -123,21 +110,13 @@
                                         <div class="col-inner">
                                             <div class="slider-wrapper">
                                                 <ul id="image-gallery">
-                                                    <li data-thumb="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/6.jpg"> 
-                                                        <img src="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/6.jpg" />
-                                                    </li>
-                                                    <li data-thumb="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/6.jpg"> 
-                                                        <img src="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/6.jpg" />
-                                                    </li>
-                                                    <li data-thumb="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/6.jpg"> 
-                                                        <img src="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/6.jpg" />
-                                                    </li>
-                                                    <li data-thumb="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/6.jpg"> 
-                                                    <img src="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/6.jpg" />
+                                                    {% for imageHomepage in imagesHomepage %}
+                                                        <li data-thumb="{{ (vich_uploader_asset(imageHomepage, 'imageFile') ? vich_uploader_asset(imageHomepage, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('images_136_78') }}"> 
+                                                            <a href="{{ (vich_uploader_asset(imageHomepage, 'imageFile') ? vich_uploader_asset(imageHomepage, 'imageFile') : asset('assets/images/no-image.png')) }}" data-fancybox="images">
+                                                                <img src="{{ (vich_uploader_asset(imageHomepage, 'imageFile') ? vich_uploader_asset(imageHomepage, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('images_560_320') }}" />
+                                                            </a>
                                                         </li>
-                                                    <li data-thumb="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/6.jpg"> 
-                                                        <img src="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/6.jpg" />
-                                                    </li>
+                                                    {% endfor %}
                                                 </ul>
                                             </div>
                                         </div>
@@ -145,22 +124,12 @@
                                     <div class="col col-md-6 col-12">
                                         <div class="col-inner">
                                             <div class="slider-wrapper relative">
-                                                <ul id="image-gallery-2">
-                                                    <li data-thumb="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/6.jpg" data-iframe="//www.youtube.com/embed/eKG08z85DtY?autoplay=1">
-                                                        <img src="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/6.jpg" />
-                                                    </li>
-                                                    <li data-thumb="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/6.jpg" data-iframe="//www.youtube.com/embed/c0asJgSyxcY?autoplay=1">
-                                                        <img src="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/6.jpg" />
-                                                    </li>
-                                                    <li data-thumb="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/6.jpg" data-iframe="//www.youtube.com/embed/SyZkgcAblC4?autoplay=1">
-                                                        <img src="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/6.jpg" />
-                                                    </li>
-                                                    <li data-thumb="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/6.jpg" data-iframe="//www.youtube.com/embed/y_wzGwPWT84?autoplay=1">
-                                                        <img src="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/6.jpg" />
-                                                    </li>
-                                                    <li data-thumb="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/6.jpg" data-iframe="//www.youtube.com/embed/JI-5kh_4gO0?autoplay=1">
-                                                        <img src="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/6.jpg" />
-                                                    </li>
+                                                <ul id="video-gallery">
+                                                    {% for videoHomepage in videosHomepage %}
+                                                        <li data-thumb="{{ (vich_uploader_asset(videoHomepage, 'imageFile') ? vich_uploader_asset(videoHomepage, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('images_136_78') }}" data-fancybox="video" href="https://www.youtube.com/embed/{{ videoHomepage.getYoutubeId() }}">
+                                                            <img src="{{ (vich_uploader_asset(videoHomepage, 'imageFile') ? vich_uploader_asset(videoHomepage, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('images_560_320') }}" />
+                                                        </li>
+                                                    {% endfor %}
                                                 </ul>
                                             </div>
                                         </div>
@@ -209,44 +178,9 @@
                 </div>
             </section>
 
-            <section class="section dark testimonial">
-                <div class="bg section-bg fill bg-fill bg-loaded"></div>
-
-                <div class="section-content relative container">
-                    <div class="row">
-                        <div class="col col-12 col-md-12">
-                            <div class="col-inner">
-                                <h1 class="title-section text-white">CẢM NHẬN KHÁCH HÀNG</h1>
-                                <span class="text-center block-underline"></span>
-
-                                <div class="slider-wrapper">
-                                    <div id="image-gallery-3">
-                                        {% for row in testimonial %}
-                                            <div class="icon-box testimonial-box">
-                                                <div class="icon-box-img testimonial-image circle">
-                                                    <img
-                                                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                        alt="{{ row.getName() }}"
-                                                        srcset="{{ (vich_uploader_asset(row, 'imageFile') ? vich_uploader_asset(row, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('news_385_394') }}"
-                                                        />
-                                                </div>
-                                                <div class="icon-box-text">
-                                                    <div class="testimonial-text">
-                                                        <p>“{{ row.getComments() }}”</p>
-                                                    </div>
-                                                    <div class="testimonial-meta">
-                                                        {{ row.getName() }}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        {% endfor %}
-                                    <div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            {{ render(controller(
+                'AppBundle:News:listTestimonial'
+            )) }}
         </div>
     </div>
 {% endblock %}

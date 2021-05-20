@@ -10,7 +10,6 @@
 {% block keyword %}{{ post.getPageKeyword() }}{% endblock %}
 
 {% block structuredOpenGraph %}
-    <link rel="amphtml" href="{{ url('amp_show', { slug: post.getUrl() }) }}">
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{{ post.getPageTitle() is not null ? post.getPageTitle() : post.getTitle() }}" />
     <meta property="og:description" content="{{ post.getPageDescription() is not null ? post.getPageDescription() : post.getDescription() }}" />
@@ -21,23 +20,6 @@
 
 {% block twitterImage %}
     <meta property="twitter:image" content="{{ vich_uploader_asset(post, 'imageFile') ? app.request.getUriForPath(vich_uploader_asset(post, 'imageFile')) : absolute_url(asset('assets/images/no-image.png')) }}" />
-{% endblock %}
-
-{% block structuredReview %}
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org/",
-        "@type": "CreativeWorkSeries",
-        "name": "{{ post.getTitle() }}",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "{{ rating }}",
-            "ratingCount": "{{ ratingCount ? ratingCount : 1 }}",
-            "bestRating" : "5",
-            "worstRating": "1"
-        }
-    }
-    </script>
 {% endblock %}
 
 {% block body %}
@@ -63,4 +45,8 @@
             {{ include('layout/sidebar.html.twig') }}
         </div>
     </div>
+
+    {{ render(controller(
+        'AppBundle:News:listTestimonial'
+    )) }}
 {% endblock %}

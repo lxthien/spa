@@ -61,6 +61,13 @@ class Banner
     /**
      * @var string
      *
+     * @ORM\Column(name="youtubeID", type="string", length=255, nullable=true)
+     */
+    private $youtubeID;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="urlImage", type="string", length=255)
      */
     private $urlImage;
@@ -192,6 +199,29 @@ class Banner
     public function getUrl()
     {
         return $this->url;
+    }
+
+    /**
+     * Set youtubeID
+     *
+     * @param string $youtubeID
+     * @return Banner
+     */
+    public function setYoutubeID($youtubeID)
+    {
+        $this->youtubeID = $youtubeID;
+
+        return $this;
+    }
+
+    /**
+     * Get youtubeID
+     *
+     * @return string
+     */
+    public function getYoutubeID()
+    {
+        return $this->youtubeID;
     }
 
     /**

@@ -21,6 +21,8 @@ use AppBundle\Entity\News;
 use AppBundle\Entity\Comment;
 use AppBundle\Entity\Tag;
 use AppBundle\Entity\Rating;
+use AppBundle\Entity\Testimonial;
+use AppBundle\Entity\Banner;
 
 use blackknight467\StarRatingBundle\Form\RatingType as RatingType;
 use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
@@ -1057,6 +1059,51 @@ class NewsController extends Controller
                 'form' => $form->createView(),
                 'costs' => $costs ? $costs : null,
                 'post' => $post
+            ]);
+        }
+    }
+
+    /**
+     * Render list testimonial
+     * @return Testimonial
+     */
+    public function listTestimonialAction($template = NULL)
+    {
+        $testimonial = $this->getDoctrine()
+            ->getRepository(Testimonial::class)
+            ->findAll();
+
+        if (!$template) {
+            return $this->render('testimonial/testimonial.html.twig', [
+                'testimonial' => $testimonial,
+            ]);
+        } else {
+            return $this->render($template, [
+                'testimonial' => $testimonial
+            ]);
+        }
+    }
+
+    /**
+     * Render list images
+     * @return Banner
+     */
+    public function listImagesActivitiesSidebarAction($template = NULL)
+    {
+        $imagesHomepage = $this->getDoctrine()
+            ->getRepository(Banner::class)
+            ->findBy(
+                array('bannercategory' => 2),
+                array('createdAt' => 'DESC')
+            );
+
+        if (!$template) {
+            return $this->render('activities/imageActivities.html.twig', [
+                'imagesHomepage' => $imagesHomepage,
+            ]);
+        } else {
+            return $this->render($template, [
+                'imagesHomepage' => $imagesHomepage
             ]);
         }
     }

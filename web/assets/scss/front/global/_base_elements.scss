@@ -206,3 +206,21 @@ i {
     width: 50%;
     margin: 0 0 30px;
 }
+
+.title-section {
+    text-align: center;
+    font-family: $arimo;
+    font-size: 27px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.dark {
+    .title-section {
+        color: $white;
+    }
+
+    .block-underline {
+        background: $white;
+    }
+}

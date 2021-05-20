@@ -6,6 +6,7 @@ $web-font-path: 'data:text/css;base64,';
 @import "~bootswatch/flatly/variables";
 @import "global/bootstrap";
 @import "../../libs/lightslider/css/lightslider.css";
+@import '~@fancyapps/fancybox/dist/jquery.fancybox.css';
 
 @import "global/fonts";
 @import "fontawesome/css/all.css";
@@ -22,5 +23,72 @@ $web-font-path: 'data:text/css;base64,';
 
     @media only screen and (max-width: 768px) {
         margin-top: 20px;
+    }
+}
+
+.title-section {
+    text-align: center;
+    font-family: $arimo;
+    font-size: 27px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.testimonial {
+    .section-bg {
+        background-image: url('../../../images/background-2.jpg');
+    }
+
+    #image-gallery-3 {
+        .testimonial-box {
+            .circle {
+                text-align: center;
+                padding: 50px;
+
+                @media only screen and (max-width : 768px) {
+                    padding: 20px;
+                }
+
+                img {
+                    border-radius: 50%;
+                }
+            }
+
+            .icon-box-text {
+                font-family: $arimo;
+
+                .testimonial-text p {
+                    color: #f1f1f1;
+                    font-style: italic;
+                    text-align: center;
+                    padding: 10px 20px;
+                    min-height: 100px;
+                    margin-bottom: 0;
+
+                    @media only screen and (max-width : 768px) {
+                        font-size: 17px;
+                    }
+                }
+
+                .testimonial-meta {
+                    color: #f1f1f1;
+                    font-style: italic;
+                    text-align: center;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    .lSSlideOuter .lSPager.lSpg > li a {
+        border: 2px solid #fff;
+        background-color: transparent;
+        width: 12px;
+        height: 12px;
+    }
+
+    .lSSlideOuter .lSPager.lSpg > li.active a {
+        background-color: #fff;
     }
 }

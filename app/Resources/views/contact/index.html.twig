@@ -50,4 +50,8 @@
             {{ include('layout/sidebar.html.twig') }}
         </div>
     </div>
+
+    {{ render(controller(
+        'AppBundle:News:listTestimonial'
+    )) }}
 {% endblock %}

@@ -4,11 +4,11 @@
         <div class="row footer-top">
             <div class="col-12 col-sm-6 col-md-3 col-lg-3">
                 <a href="{{ path('homepage') }}" title="{{ get_setting('siteName') }}" class="footer-logo">
-                    <img alt="{{ get_setting('siteName') }}" src="http://hb893.giaodienwebsite.top/wp-content/uploads/2019/12/logo-footer.png" alt="{{ get_setting('siteName') }}" />
+                    <img src="{{ asset('assets/images/logo.png') }}" alt="{{ get_setting('siteName') }}" />
                 </a>
             </div>
             <div class="col-12 col-sm-6 col-md-3 col-lg-3">
-                <h3 class="text-uppercase">Thông tin công ty</h3>
+                <h3 class="text-uppercase">Thông tin Spa</h3>
                 <ul class="footer-company">
                     <li>
                         <i class="fa fa-map-marker"></i>
@@ -32,23 +32,29 @@
                 <h3 class="text-uppercase">Chính sách hỗ trợ</h3>
                 <ul class="about-us">
                     <li>
-                        <a href="{{ path('news_category', {'level1': 'xay-dung-nha-pho' }) }}" title="Chính sách thanh toán">Chính sách thanh toán</a>
+                        <a href="{{ path('news_show', {'slug': 'chinh-sach-thanh-toan' }) }}" title="Chính sách thanh toán">Chính sách thanh toán</a>
                     </li>
                     <li>
-                        <a href="{{ path('news_category', {'level1': 'sua-chua-nha-dep' }) }}" title="Chính sách bảo mật">Chính sách bảo mật</a>
+                        <a href="{{ path('news_show', {'slug': 'chinh-sach-bao-mat' }) }}" title="Chính sách bảo mật">Chính sách bảo mật</a>
                     </li>
                     <li>
-                        <a href="{{ path('news_category', {'level1': 'thiet-ke-nha-pho' }) }}" title="Khách hàng thân thiết">Khách hàng thân thiết</a>
+                        <a href="{{ path('news_show', {'slug': 'khach-hang-than-thiet' }) }}" title="Khách hàng thân thiết">Khách hàng thân thiết</a>
                     </li>
                     <li>
-                        <a href="{{ path('news_category', {'level1': 'bang-gia' }) }}" title="Quy định chung">Quy định chung</a>
+                        <a href="{{ path('news_show', {'slug': 'quy-dinh-chung' }) }}" title="Quy định chung">Quy định chung</a>
                     </li>
                 </ul>
             </div>
             <div class="col-12 col-sm-6 col-md-3 col-lg-3">
                 <h3 class="text-uppercase">Đăng ký tư vấn</h3>
-                <div>
-                    
+                <div class="contact-form">
+                    {{ render(controller(
+                        'AppBundle:Homepage:formContact'
+                    )) }}
+                    <div id="contact-form-footer">
+                        <div id="contact-form-message">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -37,22 +37,6 @@ function initGoToTop() {
     });
 }
 
-function initProjectHotSlider() {
-    $('.bxslider').show().bxSlider({
-        auto: true,
-        autoControls: false,
-        stopAutoOnClick: true,
-        pager: false,
-        controls: true,
-        minSlides: 1,
-        maxSlides: 4,
-        moveSlides: 1,
-        slideMargin: 20,
-        touchEnabled: false,
-        autoHover: true
-    });
-}
-
 function initFixedMenu() {
     $(window).scroll(function() {
         var $nav = $("#nav");
@@ -69,107 +53,48 @@ function initFixedMenu() {
     });
 }
 
-function initCostConstruction() {
-    var $formType = $('.costs #form_type');
-    var $formFloor = $('.costs #form_floor');
-
-    if ($formType.val() == 3) {
-        $formFloor.val(1);
-        $formFloor.attr('disabled', 'disabled');
-    }
-
-    $formType.change(function(e) {
-        if ($(this).val() == 3) {
-            $formFloor.val(1);
-            $formFloor.attr('disabled', 'disabled');
-        } else {
-            $formFloor.removeAttr('disabled');
-        }
-    })
-}
-
-function initFancybox() {
-    var $rating = $('.rating-container .rating');
-    var $ratingMessage = $('p.rating-message');
-    var $star = $('#form-rating-review .rating-well .star');
-    var $formRating = $('#form-rating-review');
-
-    $rating.click(function() {
-        $formRating.show();
-        $ratingMessage.html('');
-        
-        $.fancybox.open({
-            src: '#form-rating-container',
-            touch : false
-        });
-
-        return false;
-    });
-
-    $('a#rating').click(function(e) {
-        e.preventDefault();
-
-        $formRating.show();
-        $ratingMessage.html('');
-        
-        $.fancybox.open({
-            src: '#form-rating-container',
-            touch : false
-        });
-
-        return false;
-    });
-
-    $star.on('click', function(e) {
-        var rating = $(this).data('value');
-        var newsId = $formRating.data('newsId');
-
-        $.ajax({
-            type: "POST",
-            url: $formRating.attr('action'),
-            data: 'rating=' + rating + '&newsId=' + newsId,
-            success: function(data) {
-                var response = JSON.parse(data);
-                
-                if (response.status === 'success') {
-                    $formRating.hide();
-                    $ratingMessage.html(response.message);
-                }
-            }
-        });
-    });
-}
-
 function initFlickity() {
     $('#image-gallery').lightSlider({
         gallery: true,
         item: 1,
         thumbItem: 4,
         slideMargin: 0,
-        speed: 2000,
-        auto: true,
         loop: true,
+        enableDrag: true,
+        currentPagerPosition: 'left',
+
         onSliderLoad: function() {
             $('#image-gallery').removeClass('cS-hidden');
+
+            $('[data-fancybox="images"]').fancybox({
+                buttons : [
+                    'share',
+                    'zoom',
+                    'fullScreen',
+                    'close'
+                ],
+                thumbs : {
+                    autoStart : true
+                }
+            });
         }  
     });
 
-    $('#image-gallery-2').lightSlider({
+    $('#video-gallery').lightSlider({
         gallery: true,
         item: 1,
         thumbItem: 4,
         slideMargin: 0,
-        speed: 500,
-        auto: false,
         loop: true,
         onSliderLoad: function() {
-            //$('#image-gallery-2 iframe').remove();
-            //$('#image-gallery-2 li').removeClass('hasIframe');
-        }  
-    });
+            $('#image-gallery').removeClass('cS-hidden');
 
-    $('#image-gallery-2 li').on('click', function () {
-        //$(this).addClass('hasIframe').append('<iframe width="420" height="315" src="' + $(this).attr('data-iframe') + '" frameborder="0" allowfullscreen></iframe>')
+            $('[data-fancybox="video"]').fancybox({
+                youtube: {
+                    autoplay: 1,
+                }
+            });
+        }  
     });
 
     $('#image-gallery-3').lightSlider({
@@ -195,15 +120,73 @@ function initFlickity() {
             }
         ]
     });
+
+    $('#image-gallery-sidebar').lightSlider({
+        gallery: true,
+        item: 1,
+        thumbItem: 4,
+        slideMargin: 0,
+        loop: true,
+        enableDrag: true,
+        currentPagerPosition: 'left',
+        auto: true,
+
+        onSliderLoad: function() {
+            $('#image-gallery-sidebar').removeClass('cS-hidden');
+
+            $('[data-fancybox="images"]').fancybox({
+                buttons : [
+                    'share',
+                    'zoom',
+                    'fullScreen',
+                    'close'
+                ],
+                thumbs : {
+                    autoStart : true
+                }
+            });
+        }  
+    });
+}
+
+function intHandleFormContact() {
+    var $formComment = $('#form-comment');
+
+    $formComment.on('click', '#form_send', function(e) {
+        if ($formComment.valid()) {
+            $.ajax({
+                type: "POST",
+                url: $formComment.attr('action'),
+                data: $formComment.serialize(),
+                success: function(data) {
+                    var response = JSON.parse(data);
+                    if (response.status === 'success') {
+                        $('#contact-form-message').html(response.message);
+                        $.fancybox.open({
+                            src: '#contact-form-message',
+                            touch : false
+                        });
+    
+                        // Clear form comment
+                        $formComment[0].reset();
+                    } else {
+                        $('#contact-form-message').html(response.message);
+                        $.fancybox.open({
+                            src: '#contact-form-message',
+                            touch : false
+                        });
+                    }
+                }
+            });
+        }
+    })
 }
 
 exports.init = function () {
     initSearchBox();
-    initProjectHotSlider();
     initProtectedContent();
     initGoToTop();
     initFixedMenu();
-    initCostConstruction();
-    initFancybox();
     initFlickity();
+    intHandleFormContact();
 };

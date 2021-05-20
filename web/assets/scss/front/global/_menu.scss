@@ -33,13 +33,17 @@
                 }
     
                 .navbar-toggle {
-                    border-color: $white;
+                    border-color: #e4ab68;
                     float: left;
                     margin-right: 0px;
                     padding: 8px 10px;
+
+                    &:focus, &:hover {
+                        background-color: $white;
+                    }
     
                     .icon-bar {
-                        background-color: $white;
+                        background-color: #e4ab68;
                     }
                 }
             }
@@ -100,8 +104,12 @@
                             padding: 10px;
                             font-size: 15px;
                             border-bottom: 1px dotted $geyser;
-                            color: $selectiveYellow;
-                            text-shadow: 0.2px 0.2px 0.2px $selectiveYellow;
+                            color: $black;
+                            text-shadow: 0.2px 0.2px 0.2px $black;
+
+                            &:last-child {
+                                border-bottom: none;
+                            }
                         }
 
                         i {
@@ -152,10 +160,6 @@
     
                                 a {
                                     padding: 10px 0;
-    
-                                    &:focus, &:hover {
-                                        
-                                    }
                                 }
                             }
                         }
@@ -204,6 +208,7 @@
 
                     .navbar-nav {
                         float: none!important;
+                        width: 100%;
     
                         &>li {
                             float: none;
@@ -222,12 +227,15 @@
 #nav {
     &.navbar-fixed-top {
         background-color: $white;
+        box-shadow: 0px 2px 8px 0px #e6e6e6;
 
         .nav-container .navbar {
             min-height: auto;
         }
 
         .nav-container .navbar {
+            border-top: none;
+            
             .navbar-header .navbar-brand {
                 padding: 5px 0;
 

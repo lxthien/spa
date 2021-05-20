@@ -5,10 +5,10 @@
                 {{ render(controller(
                     'AppBundle:News:listNewsByCategory', { 'categoryId': 1, 'template':'news/prices.html.twig', 'title':'Dịch vụ làm đẹp tại Hải Beauty' }
                 )) }}
-                {{ include('widgets/hotNews.html.twig') }}
                 {{ render(controller(
-                    'AppBundle:News:listNewsByCategory', { 'categoryId': 1, 'template':'news/prices.html.twig', 'title':'Ưu đãi khuyến mãi' }
+                    'AppBundle:News:listImagesActivitiesSidebar'
                 )) }}
+                {{ include('widgets/hotNews.html.twig') }}
             </div>
         </div>
     </div>
