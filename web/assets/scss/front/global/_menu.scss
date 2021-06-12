@@ -5,7 +5,7 @@
         position: relative;
 
         .navbar {
-            border-top: 1px solid #ccc;
+            border-top: 1px solid #e4ab68;
             background: transparent;
             margin-bottom: 0px;
             border-radius: 0px;
@@ -203,6 +203,7 @@
                         &.in {
                             display: block !important;
                             max-height: max-content;
+                            padding-bottom: 20px;
                         }
                     }
 
@@ -212,6 +213,7 @@
     
                         &>li {
                             float: none;
+                            border-bottom: 1px dotted #e4ab68;
 
                             a {
                                 padding: 10px;

@@ -212,6 +212,10 @@ liip_imagine:
             quality: 100
             filters:
                 thumbnail: { size: [1500, 500], mode: outbound }
+        banner_1350_550:
+            quality: 100
+            filters:
+                thumbnail: { size: [1350, 550], mode: outbound }
         images_136_78:
             quality: 100
             filters:

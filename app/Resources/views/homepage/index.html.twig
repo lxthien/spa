@@ -64,21 +64,23 @@
                                             <div class="col-inner">
                                                 <div class="box has-hover has-hover box-text-bottom">
                                                     <div class="box-image">
-                                                        <picture>
-                                                            <!--[if IE 9]><video style="display: none"><![endif]-->
-                                                            <source
-                                                                data-srcset="{{ (vich_uploader_asset(priceOnHomepage, 'imageFile') ? vich_uploader_asset(priceOnHomepage, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('news_385_394') }}"
-                                                                media="(max-width: 800px)" />
-                                                            <source
-                                                                data-srcset="{{ (vich_uploader_asset(priceOnHomepage, 'imageFile') ? vich_uploader_asset(priceOnHomepage, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('news_385_394') }}"
-                                                                media="(min-width: 801px)" />
-                                                            <!--[if IE 9]></video><![endif]-->
-                                                            <img
-                                                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                                data-src="{{ (vich_uploader_asset(priceOnHomepage, 'imageFile') ? vich_uploader_asset(priceOnHomepage, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('news_385_394') }}"
-                                                                class="lazyload"
-                                                                alt="{{priceOnHomepage.getTitle()}}" />
-                                                        </picture>
+                                                        <a href="{{ path('news_show', {'slug': priceOnHomepage.getUrl() }) }}" title="{{ priceOnHomepage.getTitle() }}">
+                                                            <picture>
+                                                                <!--[if IE 9]><video style="display: none"><![endif]-->
+                                                                <source
+                                                                    data-srcset="{{ (vich_uploader_asset(priceOnHomepage, 'imageFile') ? vich_uploader_asset(priceOnHomepage, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('news_385_394') }}"
+                                                                    media="(max-width: 800px)" />
+                                                                <source
+                                                                    data-srcset="{{ (vich_uploader_asset(priceOnHomepage, 'imageFile') ? vich_uploader_asset(priceOnHomepage, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('news_385_394') }}"
+                                                                    media="(min-width: 801px)" />
+                                                                <!--[if IE 9]></video><![endif]-->
+                                                                <img
+                                                                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                                                    data-src="{{ (vich_uploader_asset(priceOnHomepage, 'imageFile') ? vich_uploader_asset(priceOnHomepage, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('news_385_394') }}"
+                                                                    class="lazyload"
+                                                                    alt="{{priceOnHomepage.getTitle()}}" />
+                                                            </picture>
+                                                        </a>
                                                     </div>
                                                     <div class="text-center">
                                                         <div class="box-text-inner">
@@ -148,7 +150,7 @@
                     <div class="row">
                         <div class="col col-12 col-md-12">
                             <div class="col-inner">
-                                <h1 class="title-section">ĐỘI NGŨ BÁC SĨ</h1>
+                                <h1 class="title-section">ĐỘI NGŨ CHUYÊN VIÊN</h1>
                                 <span class="text-center block-underline"></span>
 
                                 <div class="row">
@@ -159,7 +161,7 @@
                                                     <img 
                                                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                                         class="lazyload"
-                                                        alt="Đội ngũ công ty"
+                                                        alt="Đội ngũ chuyên viên"
                                                         srcset="{{ get_setting('teamImageHomepage') }}">
                                                 </div>
                                             </div>
@@ -167,7 +169,7 @@
                                     </div>
                                     <div class="col col-md-5 col-12">
                                         <div class="col-inner-content">
-                                            <h1><strong>ĐỘI NGŨ BÁC SỸ</strong></h1>
+                                            <h1><strong>ĐỘI NGŨ CHUYÊN VIÊN</strong></h1>
                                             <p>{{ get_setting('teamHomepage')|raw }}</p>
                                         </div>
                                     </div>
